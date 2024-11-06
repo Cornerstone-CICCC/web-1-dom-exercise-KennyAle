@@ -19,9 +19,12 @@ btn1.addEventListener('click', () => {
 btn2.addEventListener('click', () => {
     const span = document.createElement('span')
     span.innerHTML = 'Hello word'
-    output2.append(span)
-    console.log(output2)
-    
+    const isSpan = output2.querySelector('span')
+    if (isSpan) {
+        isSpan.remove()
+    } else {
+        output2.append(span)
+    }
 })
 
 btn3.addEventListener('click', () => {
@@ -29,7 +32,8 @@ btn3.addEventListener('click', () => {
 })
 
 btn4.addEventListener('click', () => {
-    output4.style.color = 'red'
+    let textColor = 'rgb(0, 0, 0)'
+    output4.style.color = output4.style.color === 'red' ? textColor : 'red'
 })
 
 btn5.addEventListener('click', () => {
